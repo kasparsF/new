@@ -11,11 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215134943) do
+ActiveRecord::Schema.define(version: 20160229132832) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+  end
+
+  create_table "authors_books", id: false, force: :cascade do |t|
+    t.integer "author_id", null: false
+    t.integer "book_id",   null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title",        limit: 255, null: false
+    t.integer  "publisher_id",             null: false
+    t.datetime "published_at"
+    t.string   "isbn",         limit: 13
+    t.text     "blurb"
+    t.integer  "page_count"
+    t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "publishers", force: :cascade do |t|
+    t.string "name", limit: 255, null: false
   end
 
 end
