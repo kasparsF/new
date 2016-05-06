@@ -1,6 +1,58 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
+
+	match 'catalog/latest', :to => 'catalog#latest', via: [:get, :post]
+ 
+ get 'catalog/index'
+
+  get 'catalog/show'
+
+  get 'catalog/search'
+
+  get 'catalog/latest'
+
+  resources :publishers
+
+  namespace :admin do
+    resources :books
+	resources :author
+	resources :publishers
+  end
+  namespace :admin do
+  get 'author/new'
+  end
+
+  namespace :admin do
+  get 'author/create'
+  end
+
+  namespace :admin do
+  get 'author/edit'
+  end
+
+  namespace :admin do
+  get 'author/update'
+  end
+
+  namespace :admin do
+  get 'author/destroy'
+  end
+
+  namespace :admin do
+  get 'author/show'
+  end
+
+  namespace :admin do
+  get 'author/index'
+  end
+
   get 'about/index'
 
+  scope :module => "admin" do
+resources :books
+end
+
+root :to => 'catalog#index'
+match ':controller(/:action(/:id(.:format)))', via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

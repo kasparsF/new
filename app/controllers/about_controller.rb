@@ -1,4 +1,5 @@
 class AboutController < ApplicationController
-  def index
-  end
+def index
+@page_title = 'Emporium'
+end
 end

@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.5.1'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -40,9 +41,6 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 group :development do 
  	gem 'sqlite3'
 end
@@ -51,3 +49,20 @@ group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
+
+
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'thin'
+gem 'dynamic_form'
+gem 'protected_attributes'
+gem 'coffee-script-source','1.8.0'
+gem "paperclip", "~> 4.2"
+gem 'will_paginate', '~> 3.0.6'
+gem 'jquery-ui-rails'
+gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2'
+gem "chartkick"
+gem "rails-i18n"
+gem 'groupdate'
+
